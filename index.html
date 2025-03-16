@@ -3,73 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>簡單問答範例</title>
-        <style>
-    /* 讓整個頁面不出現滾動條 */
-    html, body {
-      margin: 0; 
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      font-family: sans-serif;
-      background: #f5f5f5;
-    }
-
-    /* A-Frame 場景全螢幕鋪滿，層級較低 (z-index:1) */
-    a-scene {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-    }
-
-    /* 問答區塊絕對定位在上方，層級較高 (z-index:2) */
-    .question-box {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 2;
-      max-width: 300px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      padding: 20px;
-    }
-    .question-title {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-    .answers {
-      margin-top: 20px;
-      display: flex;
-      justify-content: space-evenly;
-    }
-    .answer-btn {
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .answer-btn:hover {
-      opacity: 0.9;
-    }
-    .btn-yes {
-      background: #28a745;
-      color: #fff;
-    }
-    .btn-no {
-      background: #dc3545;
-      color: #fff;
-    }
-    #result {
-      margin-top: 15px;
-      font-weight: bold;
-      color: #333;
-    }
-        </style>  
+        
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
@@ -77,15 +11,7 @@
     </head>
 
     <body style="margin: 0; overflow: hidden;">
-       <!-- 問答區塊（層級高） -->
-  <div class="question-box">
-    <div id="question" class="question-title"></div>
-    <div class="answers">
-      <button id="btnYes" class="answer-btn btn-yes">Yes</button>
-      <button id="btnNo" class="answer-btn btn-no">No</button>
-    </div>
-    <div id="result"></div>
-  </div>
+   
         <a-scene
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
@@ -136,24 +62,6 @@
             <a-entity camera></a-entity>
         </a-scene>
 
-        <script>
-  // DOM 綁定
-  const questionEl = document.getElementById('question');
-    const resultEl   = document.getElementById('result');
-    const btnYes     = document.getElementById('btnYes');
-    const btnNo      = document.getElementById('btnNo');
-
-    // 設定題目
-    questionEl.innerText = "你喜歡湯圓嗎？";
-
-    // 按鈕事件
-    btnYes.addEventListener('click', () => {
-      resultEl.innerText = "太好了，你選擇 Yes！";
-    });
-    btnNo.addEventListener('click', () => {
-      resultEl.innerText = "哦～你選擇 No！";
-    });
   
-        </script>
     </body>
 </html>
