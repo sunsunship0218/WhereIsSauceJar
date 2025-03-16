@@ -9,9 +9,9 @@
 
     <body style="margin: 0; overflow: hidden;">
         <!-- 用來顯示題目的區塊，可用絕對定位放在畫面上屬意的位置 -->
-  <div id="question" style="position:absolute; top:10px; left:10px; color:white; font-size:24px;">
-    尚未偵測到任何 Marker
-  </div>
+     <div id="question" style="position:absolute; top:10px; left:10px; color:white; font-size:24px;">
+        尚未偵測到任何 Marker
+     </div>
         <a-scene
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
@@ -61,5 +61,22 @@
 
             <a-entity camera></a-entity>
         </a-scene>
+
+        <script>
+            // 等 DOM 載入完成再綁定事件
+    document.addEventListener("DOMContentLoaded", () => {
+      const markerA = document.querySelector("#markerA");
+      const markerB = document.querySelector("#markerB");
+      const questionEl = document.getElementById("question");
+
+      // 當 Marker A 被偵測到時
+      markerA.addEventListener("markerFound", (e) => {
+        questionEl.innerText = "Marker A 問題：7 + 2 = ?";
+      });
+      markerA.addEventListener("markerLost", (e) => {
+        questionEl.innerText = "尚未偵測到任何 Marker";
+      });
+
+        </script>
     </body>
 </html>
