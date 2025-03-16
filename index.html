@@ -1,6 +1,55 @@
 <!doctype html>
 <html>
     <head>
+        <title>簡單問答範例</title>
+        <style>
+          body {
+            margin: 0; 
+            padding: 0;
+            font-family: sans-serif;
+            background: #f5f5f5;
+          }
+          .question-box {
+            max-width: 300px;
+            margin: 40px auto; /* 置中 */
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+          }
+          .question-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+          }
+          .answers {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-evenly;
+          }
+          .answer-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+          .answer-btn:hover {
+            opacity: 0.9;
+          }
+          .btn-yes {
+            background: #28a745;
+            color: #fff;
+          }
+          .btn-no {
+            background: #dc3545;
+            color: #fff;
+          }
+          #result {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+          }
+        </style>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
@@ -8,10 +57,16 @@
     </head>
 
     <body style="margin: 0; overflow: hidden;">
-        <!-- 用來顯示題目的區塊，可用絕對定位放在畫面上屬意的位置 -->
-     <div id="question" style="position:absolute; top:10px; left:10px; color:white; font-size:24px;">
-        尚未偵測到任何 Marker
-     </div>
+
+        <div class="question-box">
+            <div id="question" class="question-title"></div>
+            <div class="answers">
+              <button id="btnYes" class="answer-btn btn-yes">Yes</button>
+              <button id="btnNo" class="answer-btn btn-no">No</button>
+            </div>
+            <div id="result"></div>
+          </div>
+
         <a-scene
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
@@ -64,19 +119,24 @@
 
         <script>
             // 等 DOM 載入完成再綁定事件
-    document.addEventListener("DOMContentLoaded", () => {
-      const markerA = document.querySelector("#markerA");
-      const markerB = document.querySelector("#markerB");
-      const questionEl = document.getElementById("question");
+  // 等 DOM 載入完成再綁定事件
+  const questionEl = document.getElementById('question');
+    const resultEl   = document.getElementById('result');
+    const btnYes     = document.getElementById('btnYes');
+    const btnNo      = document.getElementById('btnNo');
 
-      // 當 Marker A 被偵測到時
-      markerA.addEventListener("markerFound", (e) => {
-        questionEl.innerText = "Marker A 問題：7 + 2 = ?";
-      });
-      markerA.addEventListener("markerLost", (e) => {
-        questionEl.innerText = "尚未偵測到任何 Marker";
-      });
+    // 2) 設定題目
+    questionEl.innerText = "你喜歡湯圓嗎？";
 
+    // 3) 綁定按鈕點擊事件
+    btnYes.addEventListener('click', () => {
+      // 在這裡可做更多判斷，例如：計分或跳下一題
+      resultEl.innerText = "太好了，你選擇 Yes！";
+    });
+
+    btnNo.addEventListener('click', () => {
+      resultEl.innerText = "哦～你選擇 No！";
+    });
         </script>
     </body>
 </html>
