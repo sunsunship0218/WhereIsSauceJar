@@ -5,7 +5,8 @@
         <meta charset="UTF-8" />
         <title>簡單問答範例</title>
          <!-- aframe-gif-shader (讓 A-Frame 可以播放 GIF) -->
-        <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+         <a-entity geometry="primitive:box;" material="shader:gif;src:url(nyancat.gif);color:green;opacity:.8"></a-entity>
+         <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
          <!-- AR.js  -->
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -17,7 +18,7 @@
     </head>
 
 <body style="margin: 0; overflow: hidden;">
-    <a-entity geometry="primitive:box;" material="shader:gif;src:url(nyancat.gif);color:green;opacity:.8"></a-entity>
+   
 
     <a-scene  
             vr-mode-ui="enabled: false;"
@@ -45,13 +46,10 @@
        >
         <!-- 將 GIF shader 套用在 plane 或 box 上 -->
       <a-plane 
-        shader="gif"
-        src="#Gif1"
-        scale="1 1 1"
-        class="clickable"
-        rotation="-90 0 0"
-        height="1"
-        width="1"
+      material="shader: gif; src: #myGif"
+      rotation="-90 0 0"
+      height="1"
+      width="1"
         gesture-handler
       >
       </a-plane>
