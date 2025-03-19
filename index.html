@@ -40,12 +40,9 @@
            cursor="fuse: false; rayOrigin: mouse;"
            id="markerA"
        >
-       <a-entity
-           gif="src: url(assets/asset.gif); autoplay: true; loop: true;"
-           geometry="primitive: plane; width: 1; height: 1"
-           material="shader: gif; transparent: true"
-           rotation="-90 0 0"
-     ></a-entity>
+       <a-assets>
+        <img id="sample_image" src="assets/asset.gif" crossorigin="anonymous">
+     ></a-assets >
        </a-marker>
    
        <a-marker
