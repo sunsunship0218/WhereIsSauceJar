@@ -10,7 +10,7 @@
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
     </head>
-
+    <a-entity class="xyz" material="transparent: true"></a-entity>
     <body style="margin: 0; overflow: hidden;">
    
         <a-scene
@@ -31,12 +31,14 @@
            emitevents="true"
            cursor="fuse: false; rayOrigin: mouse;"
            id="markerA"
-       ><a-plane
-       rotation="-90 0 0"
-       width="1"
-       height="1"
-       material="shader: flat; transparent: true; alphaTest: 0.5; src: url(assets/ASSET_GIF.gif)"
-     ></a-plane>
+       >
+           <a-image
+               src="assets/ASSET_GIF.gif"
+               scale="1 1 1"
+               class="clickable"
+               rotation="-90 0 0"
+               gesture-handler
+           ></a-image>
        </a-marker>
    
        <a-marker
