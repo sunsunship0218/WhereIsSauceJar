@@ -9,8 +9,13 @@
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+        <!--GIF 引入 -->
+        <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+        <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+        <script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
     </head>
     <a-entity class="xyz" material="transparent: true"></a-entity>
+
     <body style="margin: 0; overflow: hidden;">
    
         <a-scene
@@ -32,13 +37,13 @@
            cursor="fuse: false; rayOrigin: mouse;"
            id="markerA"
        >
-           <a-image
-               src="assets/ASSET_GIF.gif"
-               scale="1 1 1"
-               class="clickable"
-               rotation="-90 0 0"
-               gesture-handler
-           ></a-image>
+           <a-entity
+           gif="src: assets/asset.gif; autoplay: true; loop: true;"
+           geometry="primitive: plane; height: 1; width: 1;"
+           rotation="-90 0 0"
+           class="clickable"
+           gesture-handler
+           ></a-entity>
        </a-marker>
    
        <a-marker
