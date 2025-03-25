@@ -28,11 +28,7 @@
         <!-- 放在 a-assets 裡面先載入 GIF -->
         <a-assets>
             <img id="GIF1" src="assets/GIF1.gif">
-            <img id="GIF2" src="assets/GIF2.gif">
-            <img id="GIF3" src="assets/GIF3.gif">
-            <img id="GIF4" src="assets/GIF4.gif">
-            <img id="GIF5" src="assets/GIF5.gif">
-            <img id="GIF6" src="assets/GIF6.gif">
+           
         </a-assets>
 
         <a-marker
@@ -46,18 +42,20 @@
         
        >
         <!-- 將 GIF shader 套用在 plane 或 box 上 -->
-        <a-image
-        src="assets/asset.png"
-        scale="1 1 1"
-        class="clickable"
-        rotation="-90 0 0"
-        gesture-handler
-    ></a-image>
+        <a-plane 
+         material="shader: gif; src: #GIF1"
+         rotation="-90 0 0"
+         height="1"
+         width="1"
+         gesture-handler
+ >
+        </a-plane>
+
         </a-marker>
    
 
        <a-entity camera></a-entity>
-   </a-scene>
+    </a-scene>
 
 
 </body>
