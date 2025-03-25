@@ -56,13 +56,16 @@
         
        >
         <!-- 將 GIF shader 套用在 plane 或 box 上 -->
-        <a-image
-        src="assets/GIF1.gif"
-        scale="1 1 1"
-        class="clickable"
-        rotation="-90 0 0"
-        gesture-handler
-    ></a-image>
+         <!-- 將 GIF shader 套用在 plane 或 box 上 -->
+        <a-plane 
+         material="shader: gif; src: #GIF1"
+         rotation="-90 0 0"
+         height="1"
+         width="1"
+         gesture-handler
+         >
+       </a-plane>
+
 
         </a-marker>
    
