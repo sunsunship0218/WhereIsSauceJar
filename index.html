@@ -4,6 +4,9 @@
     <head>
         <meta charset="UTF-8" />
         <title>AR</title>
+          <!-- 確保手機不會自動縮放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
          <!-- AR.js  -->
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
          <!-- aframe-gif-shader (讓 A-Frame 可以播放 GIF) -->
@@ -25,7 +28,7 @@
               position: absolute;
               bottom: 10px;      /* 依需求可改 bottom / left / right */
               left: 10px;     
-              width: auto;    /* 或 max-width: 200px; 依需求 */
+              max-width: 80px;     /* 或 max-width: 200px; 依需求 */
               height: auto;
               z-index: 9999;  /* 讓它顯示在 A-Frame 場景之上 */
             }
