@@ -19,17 +19,18 @@
               padding: 0;
               overflow: hidden;
             }
-        
-            /* LOGO 的絕對定位，置於右下角 */
+          
+            /* 你的 LOGO 圖片絕對定位在螢幕上方（或下方），並確保有足夠 z-index */
             #logo {
               position: absolute;
-              bottom: 10px; /* 距離底部 10px */
-              max-width: 80px;
-              transform-origin: bottom left; 
-              z-index: 9999; /* 確保在 A-Frame 場景之上 */
-              
+              top: 10px;      /* 依需求可改 bottom / left / right */
+              left: 10px;     
+              width: auto;    /* 或 max-width: 200px; 依需求 */
+              height: auto;
+              z-index: 9999;  /* 讓它顯示在 A-Frame 場景之上 */
             }
           </style>
+        
     </head>
 
 <body style="margin: 0; overflow: hidden;">
@@ -188,6 +189,7 @@
 
        <a-entity camera></a-entity>
     </a-scene>
+     <!-- 放在 scene 後面，確保在上方 -->
     <img id="logo" src="assets/TITLE.png" alt="Logo">
 
 </body>
