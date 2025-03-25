@@ -18,7 +18,7 @@
     <a-scene  
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: true;"
+            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
             id="scene"
             embedded
             gesture-detector
@@ -34,7 +34,7 @@
            id="animated-marker1"
            type="pattern"
            preset="custom"
-           url="assets/pattern-marker.patt"
+           url="assets/pattern-1.patt"
            raycaster="objects: .clickable"
            emitevents="true"
            cursor="fuse: false; rayOrigin: mouse;"
@@ -56,7 +56,7 @@
         id="animated-marker2"
         type="pattern"
         preset="custom"
-        url="assets/pattern-TEST2.patt"
+        url="assets/pattern-2.patt"
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
@@ -74,6 +74,93 @@
 
         </a-marker>
    
+        <a-marker
+        id="animated-marker3"
+        type="pattern"
+        preset="custom"
+        url="assets/pattern-3.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+     
+    >
+      <!-- 將 GIF shader 套用在 plane 或 box 上 -->
+        <a-plane 
+        material="shader: gif; src: #GIF1"
+        rotation="-90 0 0"
+        height="1"
+        width="1"
+        gesture-handler
+       >
+        </a-plane>
+
+        </a-marker>
+
+        <a-marker
+        id="animated-marker4"
+        type="pattern"
+        preset="custom"
+        url="assets/pattern-4.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+     
+    >
+      <!-- 將 GIF shader 套用在 plane 或 box 上 -->
+        <a-plane 
+        material="shader: gif; src: #GIF1"
+        rotation="-90 0 0"
+        height="1"
+        width="1"
+        gesture-handler
+       >
+        </a-plane>
+
+        </a-marker>
+
+        <a-marker
+        id="animated-marker5"
+        type="pattern"
+        preset="custom"
+        url="assets/pattern-5.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+     
+    >
+      <!-- 將 GIF shader 套用在 plane 或 box 上 -->
+        <a-plane 
+        material="shader: gif; src: #GIF1"
+        rotation="-90 0 0"
+        height="1"
+        width="1"
+        gesture-handler
+       >
+        </a-plane>
+
+        </a-marker>
+
+        <a-marker
+        id="animated-marker6"
+        type="pattern"
+        preset="custom"
+        url="assets/pattern-6.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+     
+    >
+      <!-- 將 GIF shader 套用在 plane 或 box 上 -->
+        <a-plane 
+        material="shader: gif; src: #GIF1"
+        rotation="-90 0 0"
+        height="1"
+        width="1"
+        gesture-handler
+       >
+        </a-plane>
+
+        </a-marker>
 
        <a-entity camera></a-entity>
     </a-scene>
